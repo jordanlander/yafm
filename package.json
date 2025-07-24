@@ -1,7 +1,7 @@
 {
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^6.1.0",
-    "@openzeppelin/contracts": "^4.9.6",
+    "@openzeppelin/contracts": "^4.9.5",
     "@types/chai": "^4.3.20",
     "@types/mocha": "^10.0.10",
     "@types/node": "^24.1.0",
@@ -13,8 +13,8 @@
     "typescript": "^5.8.3"
   },
   "scripts": {
-    "lint": "prettier --check .",
     "test": "hardhat test",
+    "lint": "prettier --check .",
     "coverage": "hardhat coverage"
   }
 }
