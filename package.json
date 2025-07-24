@@ -13,6 +13,8 @@
     "typescript": "^5.8.3"
   },
   "scripts": {
-    "lint": "prettier --check ."
+    "lint": "prettier --check .",
+    "test": "hardhat test",
+    "coverage": "hardhat coverage"
   }
 }
