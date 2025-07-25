@@ -14,7 +14,8 @@ npx hardhat node
 npx hardhat ignition deploy ./ignition/modules/Lock.ts
 ```
 
-Run `npm run lint` to check formatting.
+Run `npm test` to execute the tests, `npm run coverage` for a coverage report,
+and `npm run lint` to check formatting.
 
 ## Deployed Contracts (Local)
 
