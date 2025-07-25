@@ -1,32 +1,21 @@
-import { ethers, network } from "hardhat";
-import fs from "fs";
+import { ethers } from "hardhat";
 
 async function main() {
   const [deployer] = await ethers.getSigners();
-
-  console.log(`Deploying contracts with ${deployer.address} to ${network.name}`);
+  console.log("Deploying contracts with:", deployer.address);
 
   const Token = await ethers.getContractFactory("YAFMToken");
   const token = await Token.deploy(deployer.address);
-  await token.deployed();
-  console.log(`YAFMToken deployed to ${token.address}`);
+  await token.waitForDeployment();
+  console.log("YAFMToken deployed to:", await token.getAddress());
 
   const Badge = await ethers.getContractFactory("BadgeNFT");
-  const badge = await Badge.deploy(deployer.address, "");
-  await badge.deployed();
-  console.log(`BadgeNFT deployed to ${badge.address}`);
-
-  const addresses = {
-    YAFMToken: token.address,
-    BadgeNFT: badge.address,
-  };
-
-  const file = `deployed-${network.name}.json`;
-  fs.writeFileSync(file, JSON.stringify(addresses, null, 2));
-  console.log(`Saved addresses to ${file}`);
+  const badge = await Badge.deploy(deployer.address, "https://example.com/");
+  await badge.waitForDeployment();
+  console.log("BadgeNFT deployed to:", await badge.getAddress());
 }
 
-main().catch((err) => {
-  console.error(err);
+main().catch((error) => {
+  console.error(error);
   process.exitCode = 1;
 });
