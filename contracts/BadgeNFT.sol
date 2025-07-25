@@ -23,13 +23,15 @@
          lessonOf[id] = lessonId;
      }
 
-     function _beforeTokenTransfer(address from, address to, uint256 tokenId, uint256 batchSize)
-         internal
-         override
-     {
-         if (from != address(0) && to != address(0)) revert NonTransferable();
-         super._beforeTokenTransfer(from, to, tokenId, batchSize);
-     }
+    function _update(address to, uint256 tokenId, address auth)
+        internal
+        override
+        returns (address)
+    {
+        address from = super._update(to, tokenId, auth);
+        if (from != address(0) && to != address(0)) revert NonTransferable();
+        return from;
+    }
 
      function tokenURI(uint256 tokenId) public view override returns (string memory) {
          return string(abi.encodePacked(baseURI, tokenId.toString(), ".json"));

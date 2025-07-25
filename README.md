@@ -12,6 +12,26 @@ npx hardhat node
 npx hardhat ignition deploy ./ignition/modules/Lock.ts
 ```
 
+## Deployment
+
+The project uses environment variables to manage network RPC URLs and accounts. Create a `.env` file at the project root with the following keys:
+
+```dotenv
+SEPOLIA_URL=
+SEPOLIA_PRIVATE_KEY=
+MAINNET_URL=
+MAINNET_PRIVATE_KEY=
+```
+
+To deploy `YAFMToken` and `BadgeNFT` run:
+
+```shell
+# Example: deploy to Sepolia
+npx hardhat run scripts/deploy.ts --network sepolia
+```
+
+The script saves the addresses to `deployed-sepolia.json` (or `deployed-mainnet.json`).
+
 ## Deployed Contracts (Local)
 
 - **YAFMToken**: 0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9  
