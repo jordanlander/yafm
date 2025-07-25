@@ -58,3 +58,4 @@ contract BadgeNFT is ERC721 {
         return string(abi.encodePacked(baseURI, tokenId.toString(), ".json"));
     }
 }
+
