@@ -8,12 +8,16 @@ Try running some of the following tasks:
 npx hardhat help
 npx hardhat test
 REPORT_GAS=true npx hardhat test
+npx hardhat coverage
+npm run coverage
 npx hardhat node
 npx hardhat ignition deploy ./ignition/modules/Lock.ts
 ```
 
+Run `npm test` to execute the tests, `npm run coverage` for a coverage report,
+and `npm run lint` to check formatting.
+
 ## Deployed Contracts (Local)
 
-- **YAFMToken**: 0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9  
-- **BadgeNFT**:  0x5FC8d32690cc91D4c39d9d3abcBD16989F875707  
-
+- **YAFMToken**: 0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9
+- **BadgeNFT**: 0x5FC8d32690cc91D4c39d9d3abcBD16989F875707
