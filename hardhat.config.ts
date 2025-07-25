@@ -1,3 +1,4 @@
+
 import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
 import * as dotenv from "dotenv";
@@ -16,6 +17,7 @@ const config: HardhatUserConfig = {
       accounts: process.env.MAINNET_PRIVATE_KEY ? [process.env.MAINNET_PRIVATE_KEY] : [],
     },
   },
+
 };
 
 export default config;
