@@ -2,6 +2,7 @@ name: CI
 
 on:
   pull_request:
+
   push:
     branches: [main, master]
 
@@ -24,3 +25,4 @@ jobs:
         with:
           name: coverage-report
           path: coverage
+
