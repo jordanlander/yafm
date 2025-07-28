@@ -57,4 +57,17 @@ The deployed contract addresses will be shown in the console after each deployme
 ## Deployed Contracts (Local)
 
 - **YAFMToken**: 0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9
-- **BadgeNFT**:  0x5FC8d32690cc91D4c39d9d3abcBD16989F875707
+- **BadgeNFT**: 0x5FC8d32690cc91D4c39d9d3abcBD16989F875707
+
+## Metadata Server
+
+An example metadata server is included to serve JSON files for `BadgeNFT` tokens.
+It serves static files from the `metadata/` directory. Run it with:
+
+```bash
+npm run metadata-server
+```
+
+By default the server listens on port `3000`. The `baseURI` for the NFT should be
+set to `http://localhost:3000/` so that `tokenURI` resolves to
+`http://localhost:3000/<tokenId>.json`.

@@ -1,0 +1,6 @@
+{
+  "name": "Badge #1",
+  "description": "Example badge for lesson 1",
+  "image": "https://placehold.co/600x600.png",
+  "attributes": [{ "trait_type": "Lesson", "value": 1 }]
+}
